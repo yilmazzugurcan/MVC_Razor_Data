@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+
+    string[] renkler = { "sarı", "kırmızı", "mavi", "siyah", "mor", "beyaz", "sarı", "kırmızı", "mavi", "siyah", "mor", "beyaz" };
+    string t = " - ";
+}
+
+
+<main>
+    <ul>
+        @foreach (var rnk in renkler)
+        {
+            @rnk @t
+        }
+    </ul>
+
+</main>

@@ -1,0 +1,10 @@
+﻿@using MVC_Razor_Data.Models;
+@model List<Personel>
+
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.PersonalId @item.Ad @item.Soyad @item.D_Tarihi.Year @item.EmeklilikDrumu</li>
+    }
+</ul>

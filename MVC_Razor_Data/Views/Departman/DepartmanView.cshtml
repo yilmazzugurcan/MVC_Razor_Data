@@ -1,0 +1,13 @@
+﻿
+@using MVC_Razor_Data.Models;
+@model  List<Departman>
+@{
+    ViewBag.Title = "DepartmanView";
+}
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.DepartanAdi</li>
+    }
+</ul>

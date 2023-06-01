@@ -1,0 +1,52 @@
+﻿
+@model string[]
+
+@{
+    ViewBag.Title = "About";
+}
+
+
+
+<main aria-labelledby="title">   
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 style="color:#ff6a00">RENKLER</h3>
+                    <hr />
+
+                    @for (int i = 0; i < Model.Length; i++)
+                    {
+                        <ul style="list-style: none; text-transform:uppercase">
+                            <li>
+                                @Model[i]
+                            </li>
+                        </ul>
+                    }
+                </div>
+
+                <div class="col-md-4">
+                    <h3 style="color:#ff6a00">RAKAMLAR</h3>
+                    <hr />
+
+                    @for (int i = 0; i < ViewBag.rakam.Length; i++)
+                    {
+                        <ul style="list-style: none; text-transform:uppercase">
+                            <li>
+                                @ViewBag.rakam[i]
+                            </li>
+                        </ul>
+                    }
+                </div>
+
+                <div class="col-md-4">
+                    <h3 style="color:#ff6a00">MARKALAR</h3>
+                    <hr />
+                    <ul>
+                        @foreach (var marka in ViewBag.markalar)
+                        {
+                            <li>@marka</li>
+
+                        }
+                    </ul>
+                </div>
+            </div>         
+</main>

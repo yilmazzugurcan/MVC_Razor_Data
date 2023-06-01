@@ -1,0 +1,57 @@
+﻿@using MVC_Razor_Data.Models;
+@model Sube
+@{
+    ViewBag.Title = "FirmaIndex";
+}
+
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Sıra No</th>
+            <th scope="col">Profil</th>
+            <th scope="col">Ad</th>
+            <th scope="col">Soyad</th>
+            <th scope="col">Doğum Tarihi</th>
+            <th scope="col">Emeklilik Durumu</th>
+            <th scope="col">Çalışıyor mu?</th>
+            <th scope="col">Sil</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var item in Model.PersonelList)
+        {
+            <tr>
+                <th scope="row">@item.PersonalId</th>
+                <td><img height="50px" width="50px" src="/img/@item.Resim" alt="@item.PersonalId Resmi hedef dizinde bulunamadı."></td>
+                <td>@item.Ad</td>
+                <td>@item.Soyad</td>
+                <td>@item.D_Tarihi.Year</td>
+                <td>@(item.EmeklilikDrumu = DateTime.Now.Year - item.D_Tarihi.Year >= 60 ? "Evet" : "Hayır")</td>
+                <td>
+                    @if (item.IsActive.Value)
+                    {
+                        <strong style="color:red">Evet</strong>
+                    }
+                    else
+                    {
+                        <p style="opacity:0.5">Hayır</p>
+                    }
+
+                </td>
+                <td style="text-align:center"><a href="/Firma/Detay/@item.PersonalId" class="btn btn-danger" role="button" style="border-radius:18px">Sil</a>@Html.ActionLink("Detay", "Detay", new {id=item.PersonalId},new { @class="btn btn-info", @style="border-radius:18px" })</td>
+                @*burada sil ve detay butonu ikiside detaya gidiyor. biri html ile yapıldı diğeri actionlink ile işlevleri aynı*@
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+

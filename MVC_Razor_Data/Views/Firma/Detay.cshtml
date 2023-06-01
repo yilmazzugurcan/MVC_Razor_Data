@@ -1,0 +1,46 @@
+﻿@model MVC_Razor_Data.Models.Personel
+@{
+    ViewBag.Title = "Detay";
+}
+
+
+<div class="row">
+    <div class="col-md-3">
+        <img width="200px" height="auto" src="~/img/@Model.Resim" />
+    </div>
+
+    <div class="col-md-9">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Sıra No</th>
+                    <th scope="col">Ad</th>
+                    <th scope="col">Soyad</th>
+                    <th scope="col">Doğum Tarihi</th>
+                    <th scope="col">Emeklilik Durumu</th>
+                    <th scope="col">Çalışıyor mu?</th>
+                    <th scope="col">İşlem</th>                    
+                </tr>
+            </thead>
+
+
+            <tbody>
+                <tr>
+                    <th scope="row">@Model.PersonalId</th>
+                    <td>@Model.Ad</td>
+                    <td>@Model.Soyad</td>
+                    <td>@Model.D_Tarihi.Year</td>
+                    <td>@(Model.EmeklilikDrumu = DateTime.Now.Year - Model.D_Tarihi.Year >= 60 ? "Evet" : "Hayır")</td>
+                    <td>@Model.IsActive.Value</td>
+                    <td><a href="#" class="btn btn-danger" role="button">Delete</a></td>
+                    <td><a href="#" class="btn btn-primary" role="button">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-md-1">
+        
+    </div>
+</div>
+
