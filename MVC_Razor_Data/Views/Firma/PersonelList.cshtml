@@ -1,8 +1,9 @@
-﻿@using MVC_Razor_Data.Models;
-@model Sube
+﻿@model List<MVC_Razor_Data.Models.Personel>
 @{
-    ViewBag.Title = "FirmaIndex";
+    ViewBag.Title = "PersonelList";
 }
+
+<h2>PersonelList</h2>
 
 
 
@@ -22,7 +23,7 @@
 
 
     <tbody>
-        @foreach (var item in Model.PersonelList)
+        @foreach (var item in Model)
         {
             <tr>
                 <th scope="row">@item.PersonalId</th>
@@ -42,16 +43,9 @@
                     }
 
                 </td>
-                <td style="text-align:center"><a href="/Firma/Detay/@item.PersonalId" class="btn btn-danger" role="button" style="border-radius:18px">Sil</a>@Html.ActionLink("Detay", "Detay", new {id=item.PersonalId},new { @class="btn btn-info", @style="border-radius:18px" })</td>
+                <td style="text-align:center"><a href="/Firma/Detay/@item.PersonalId" class="btn btn-danger" role="button" style="border-radius:18px">Sil</a>@Html.ActionLink("Detay", "Detay", new { id = item.PersonalId }, new { @class = "btn btn-info", @style = "border-radius:18px" })</td>
                 @*burada sil ve detay butonu ikiside detaya gidiyor. biri html ile yapıldı diğeri actionlink ile işlevleri aynı*@
             </tr>
         }
     </tbody>
 </table>
-
-
-
-
-
-
-

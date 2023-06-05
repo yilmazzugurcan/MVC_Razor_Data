@@ -30,7 +30,7 @@
                     <td>@Model.Ad</td>
                     <td>@Model.Soyad</td>
                     <td>@Model.D_Tarihi.Year</td>
-                    <td>@(Model.EmeklilikDrumu = DateTime.Now.Year - Model.D_Tarihi.Year >= 60 ? "Evet" : "Hayır")</td>
+                    <td>@(Model.EmeklilikDrumu = DateTime.Now.Year - Model.K_Tarihi.Year >= 60 ? "Evet" : "Hayır")</td>
                     <td>@Model.IsActive.Value</td>
                     <td><a href="#" class="btn btn-danger" role="button">Delete</a></td>
                     <td><a href="#" class="btn btn-primary" role="button">Edit</a></td>

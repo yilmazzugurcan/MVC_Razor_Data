@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "PersonelEkle";
+}
+<h2>PersonelEkle</h2>
+
+<hr />
+
+@using (Html.BeginForm("PersonelEkle","Firma",FormMethod.Post))
+            {
+               <div class="form-horizontal">
+                   <div class="form-group">
+                       <label for="personel" class="control-label col-md-3"><strong> Personel Adı</strong></label>
+                       <div class="col-md-9">
+                           @Html.TextBox("Ad", null, new { @class = "form-control" })
+                       </div>
+                   </div>
+                   <div class="form-group">
+                       <label for="personel" class="control-label col-md-3"><strong> Personel Soyadı</strong></label>
+                       <div class="col-md-9">
+                           @Html.TextBox("Soyad", null, new { @class = "form-control" })
+                       </div>
+                   </div>
+                   <div class="form-group">
+                       <label for="personel" class="control-label col-md-3"><strong> Personel Maaşı</strong></label>
+                       <div class="col-md-9">
+                           @Html.TextBox("Maas", null, new { @class = "form-control" })
+                       </div>
+                   </div>
+                   <div class="form-group">
+                       <label for="personel" class="control-label col-md-3"><strong> Emeklilik Durumu</strong></label>
+                       <div class="col-md-9">
+                           Emekli @Html.RadioButton("EmeklilikDurumu", true)
+                           Emekli Değil @Html.RadioButton("EmeklilikDurumu", false)
+                       </div>
+                   </div>
+                   <div class="form-group">
+                       <label for="personel" class="control-label col-md-3"><strong> Çalışma Durumu</strong></label>
+                       <div class="col-md-9">
+                           Çalışıyor @Html.RadioButton("IsActive", true)
+                           Çalışmıyor @Html.RadioButton("IsActive", false)
+                       </div>
+                   </div>
+                   <div class="form-group">
+                       <label for="personel" class="control-label col-md-3"><strong> Resim</strong></label>
+                       <div class="col-md-9">
+                           @Html.TextBox("Resim", null, new { @class = "form-control" })
+                       </div>
+                   </div>
+                   <br />
+
+                   <div class="form-group">
+                       <div class="col-sm-offset-3 col-sm-9">
+                           <button type="submit" class="btn btn-primary">KAYDET</button>
+                       </div>
+                   </div>
+
+
+
+
+
+
+
+
+               </div>
+
+
+
+                   }

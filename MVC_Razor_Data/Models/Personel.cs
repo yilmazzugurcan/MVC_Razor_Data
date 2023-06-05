@@ -10,7 +10,7 @@ namespace MVC_Razor_Data.Models
         public int PersonalId { get; set; }
         public string Ad { get; set; }
         public string Soyad { get; set; }
-        public DateTime D_Tarihi { get; set; }
+        public DateTime K_Tarihi { get; set; }
         public double Maas { get; set; }
         public string EmeklilikDrumu { get; set; }
         public bool? IsActive { get; set; }

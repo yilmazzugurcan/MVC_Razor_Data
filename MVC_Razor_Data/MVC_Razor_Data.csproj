@@ -188,6 +188,8 @@
     <Content Include="Views\Departman\DepartmanView.cshtml" />
     <Content Include="Views\Calisan\CalisanView.cshtml" />
     <Content Include="Views\Firma\Detay.cshtml" />
+    <Content Include="Views\Firma\PersonelEkle.cshtml" />
+    <Content Include="Views\Firma\PersonelList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
